@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Permissions -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission
+        android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE"
+        android:minSdkVersion="34" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="false" />
+
+    <application
+        android:name="com.v2ray.ang.AngApplication"
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
+        tools:ignore="GoogleAppIndexingWarning">
+
+        <!-- Main Activity (Launcher) -->
+        <activity
+            android:name="com.v2ray.ang.ui.MainActivity"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:theme="@style/AppThemeDayNight.NoActionBar"
+            android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Other Activities -->
+        <activity
+            android:name="com.v2ray.ang.ui.ServerActivity"
+            android:exported="false"
+            android:windowSoftInputMode="stateUnchanged|adjustPan" />
+
+        <activity
+            android:name="com.v2ray.ang.ui.SettingsActivity"
+            android:exported="false" />
+
+        <activity
+            android:name="com.v2ray.ang.ui.PerAppProxyActivity"
+            android:exported="false" />
+
+        <activity
+            android:name="com.v2ray.ang.ui.ScannerActivity"
+            android:exported="false" />
+
+        <activity
+            android:name="com.v2ray.ang.ui.LogcatActivity"
+            android:exported="false" />
+
+        <activity
+            android:name="com.v2ray.ang.ui.RoutingSettingActivity"
+            android:exported="false" />
+
+        <activity
+            android:name="com.v2ray.ang.ui.SubSettingActivity"
+            android:exported="false" />
+
+        <activity
+            android:name="com.v2ray.ang.ui.UserAssetActivity"
+            android:exported="false" />
+
+        <!-- V2Ray VPN Service -->
+        <service
+            android:name="com.v2ray.ang.service.V2RayVpnService"
+            android:enabled="true"
+            android:exported="false"
+            android:foregroundServiceType="specialUse"
+            android:label="@string/app_name"
+            android:permission="android.permission.BIND_VPN_SERVICE"
+            android:process=":RunSoLibV2RayDaemon">
+            <intent-filter>
+                <action android:name="android.net.VpnService" />
+            </intent-filter>
+            <meta-data
+                android:name="android.net.VpnService.SUPPORTS_ALWAYS_ON"
+                android:value="true" />
+            <property
+                android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
+                android:value="vpn" />
+        </service>
+
+        <!-- V2Ray Proxy-Only Service -->
+        <service
+            android:name="com.v2ray.ang.service.V2RayProxyOnlyService"
+            android:exported="false"
+            android:foregroundServiceType="specialUse"
+            android:label="@string/app_name"
+            android:process=":RunSoLibV2RayDaemon">
+            <property
+                android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
+                android:value="proxy" />
+        </service>
+
+        <!-- V2Ray Test Service -->
+        <service
+            android:name="com.v2ray.ang.service.V2RayTestService"
+            android:exported="false"
+            android:process=":RunSoLibV2RayDaemon" />
+
+        <!-- Quick Settings Tile -->
+        <service
+            android:name="com.v2ray.ang.service.QSTileService"
+            android:exported="true"
+            android:foregroundServiceType="specialUse"
+            android:icon="@drawable/ic_stat_name"
+            android:label="@string/app_tile_name"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE"
+            android:process=":RunSoLibV2RayDaemon"
+            tools:targetApi="24">
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE" />
+            </intent-filter>
+            <property
+                android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
+                android:value="tile" />
+        </service>
+
+        <!-- Boot Receiver -->
+        <receiver
+            android:name="com.v2ray.ang.receiver.BootReceiver"
+            android:exported="true"
+            android:label="BootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <!-- NekoX IPC Receiver - According to TgXRayAPIspecification.md -->
+        <receiver
+            android:name="com.v2ray.ang.receiver.V2RayNGReceiver"
+            android:exported="true"
+            android:process=":RunSoLibV2RayDaemon">
+            <intent-filter>
+                <!-- Enhanced Command Protocol (v2.0) -->
+                <action android:name="com.v2ray.ang.action.NEKOX_COMMAND" />
+
+                <!-- Legacy API (v1.0) - Backward compatibility -->
+                <action android:name="com.v2ray.ang.action.NEKOX_START" />
+                <action android:name="com.v2ray.ang.action.NEKOX_STOP" />
+                <action android:name="com.v2ray.ang.action.NEKOX_IMPORT_PROFILE" />
+                <action android:name="com.v2ray.ang.action.NEKOX_TEST_PROFILE" />
+                <action android:name="com.v2ray.ang.action.NEKOX_TEST_ALL" />
+            </intent-filter>
+        </receiver>
+
+        <provider
+            android:name="androidx.startup.InitializationProvider"
+            android:authorities="${applicationId}.androidx-startup"
+            android:exported="false"
+            tools:node="merge">
+
+            <meta-data
+                android:name="androidx.work.WorkManagerInitializer"
+                android:value="androidx.startup"
+                tools:node="remove" />
+
+        </provider>
+
+    </application>
+
+</manifest>
