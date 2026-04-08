@@ -1,9 +1,13 @@
 .idea/
 .gradle/
+.claude/
+.qwen/
 build/
 obj/
 *.iml
 local.properties
+CLAUDE.md
+QWEN.md
 TMessagesProj/.cxx/
 TMessagesProj/jniLibs/
 TMessagesProj/jniRes/
@@ -13,7 +17,6 @@ TMessagesProj_AppHockeyApp/afat/
 TMessagesProj_AppStandalone/afat/
 TMessagesProj_AppHuawei/afat/
 /TMessagesProj_AppHuawei/
-
 # Binary and generated files
 *.apk
 *.aar
@@ -26,7 +29,6 @@ TMessagesProj_AppHuawei/afat/
 *.jar
 *.class
 *.pyc
-
 # Native libraries and build artifacts
 **/jni/boringssl/lib/
 **/jni/tde2e/arm64-v8a/
@@ -36,20 +38,13 @@ TMessagesProj_AppHuawei/afat/
 **/jni/lib/
 **/libs/*.jar
 **/libs/*.aar
-
-# Android Studio / IntelliJ
-*.iml
-.idea/
-.gradle/
-build/
+.stfolder/
 captures/
 externalNativeBuild/
 .cxx/
 **/google-services.json
-
 # Log files
 *.log
-
 # Project specific exclusions
 TMessagesProj_App/bundleAfat/
 v2ray/app/libs/
