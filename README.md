@@ -31,7 +31,7 @@ TeleRay.apk и v2rayTg.apk запускаюся как отдельные apk п
    меню    "код-пароля").
 9. команд IPC назначения/управления конкретного профиля - нет (только команда выбора наилучшего,
    определяемого уже самим v2rayTg самостоятельно)
-
+Скачать APK (подписанные разработчиком) тут [TeleRay](https://github.com/vit1967/TeleRay/releases/download/v1.0/teleray.apk), [v2rayTg](https://github.com/vit1967/TeleRay/releases/download/v1.0/v2ray_standalone-release.apk) .
 ВНИМАНИЕ! Приложение после запуска регистрируется как стандартный новый клиент Telegram. Напоминаю,
 что в РФ не приходят СМС авторизации свежеустановленных кл-ов Telegram, но Telegram рассылает коды 
 авторизации и через свой специальный чат "Telegram Notification" (mobile 42777), поэтому перед 
