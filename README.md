@@ -1,4 +1,4 @@
-## TeleRay + v2rayTg it is clon(fork) + of Telegram messenger for Android + interaction with v2rayTg.
+## TeleRay + v2rayTg it is clone(fork) + of Telegram messenger for Android + interaction with v2rayTg.
 v2rayTg - это форк успешного проекта v2rayNG с добавлением IPC-ф-ций для взаимодействи с TeleRay.(
 А TeleRay - это форк официально рекомендованных Telegram [исходников](https://github.com/DrKLO/Telegram)  для создания своего кастомного клиента Telegram .
 teleray.apk и v2ray_standalone-release.apk запускаюся как отдельные apk приложения на однмом устройстве android. 
