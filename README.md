@@ -33,6 +33,8 @@ teleray.apk и v2ray_standalone-release.apk запускаюся как отде
    
 Скачать APK (подписанные разработчиком) тут [TeleRay](https://github.com/vit1967/TeleRay/releases/download/v1.0/teleray.apk), [v2rayTg](https://github.com/vit1967/TeleRay/releases/download/v1.0/v2ray_standalone-release.apk).
 
+Если вы подписаны на hlvpnbot (как на поставщика кл.-профилей и MTProxy), скачивайте [преднастроенную на этот бот конфигурацию для ключей](https://github.com/vit1967/TeleRay/blob/master/docs/TeleRay_V2RayBot_hlvpnbot.json) и для [прокси](https://github.com/vit1967/TeleRay/blob/master/docs/TeleRay_MTProxyBot_hlvpnbot.json) , тогда вам практич. ничего не придется конфигурировать самим.
+
 ВНИМАНИЕ! Приложение после запуска регистрируется как стандартный новый клиент Telegram. Напоминаю,
 что в РФ не приходят СМС авторизации свежеустановленных кл-ов Telegram, но Telegram рассылает коды 
 авторизации и через свой специальный чат "Telegram Notification" (mobile 42777), поэтому перед 
