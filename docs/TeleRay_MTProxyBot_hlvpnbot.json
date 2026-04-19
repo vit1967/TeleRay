@@ -1,0 +1,18 @@
+{
+    "type": "MTProxyBot",
+    "bot": "@hlvpnbot",
+    "botId": 5542931765,
+    "requests": [
+        "📟 MTProxy",
+        "❌ Назад; 📟 MTProxy"
+    ],
+    "proxies": [
+        "https:\/\/t.me\/proxy?server=tg1.undef.network&port=6667&secret=23ef4022c0c55938303955abda2c489a",
+        "https:\/\/t.me\/proxy?server=tg1.undef.network&port=6667&secret=23ef4022c0c55938303955abda2c489a"
+    ],
+    "times": [
+        1775989222786,
+        1775989293033
+    ],
+    "interval": 20
+}
