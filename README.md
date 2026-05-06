@@ -31,7 +31,7 @@ teleray.apk и v2ray_standalone-release.apk запускаюся как отде
 9. команд IPC назначения/управления конкретного профиля - сознательно нет (только команда выбора наилучшего,
    определяемого уже самим v2rayTg самостоятельно).
    
-Скачать APK (подписанные разработчиком) тут [TeleRay](https://github.com/vit1967/TeleRay/releases/download/v1.1/teleray.apk), [v2rayTg](https://github.com/vit1967/TeleRay/releases/download/v1.1/v2ray_standalone-release.apk).
+Скачать APK (подписанные разработчиком) тут[ [TeleRay](https://github.com/vit1967/TeleRay/releases/download/v1.3/teleray.apk), [v2rayTg](https://github.com/vit1967/TeleRay/releases/download/v1.3/v2ray_standalone-release.apk).
 
 Если вы подписаны на @hlvpnbot (как на поставщика ключей-профилей и MTProxy), скачивайте [преднастроенную на этот бот конфигурацию для ключей](https://github.com/vit1967/TeleRay/blob/master/docs/TeleRay_V2RayBot_hlvpnbot.json) и для [прокси](https://github.com/vit1967/TeleRay/blob/master/docs/TeleRay_MTProxyBot_hlvpnbot.json) , тогда вам практич. ничего не придется конфигурировать самим.
 
